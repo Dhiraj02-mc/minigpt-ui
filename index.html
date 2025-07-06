@@ -209,28 +209,80 @@
   background: linear-gradient(to right, #004ba0, #001e4f);
   color: white;
 }
-    #about {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: auto;
+    /* 🌟 Global font */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
 }
 
-footer p {
-  margin: 5px;
+/* 🧾 About Section */
+#about-section {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#about-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#about-section p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* 🦶 Footer Section */
+#footer {
+  background-color: #ffffff;
+  color: #555;
+  text-align: center;
+  padding: 20px;
   font-size: 14px;
+  border-top: 1px solid #eee;
+}
+
+#footer strong {
+  color: #000;
 }
   </style>
 </head>
 <body>
-  <!-- About Section -->
-<section id="about" style="padding: 20px; background: #f2f2f2; text-align: center;">
-  <h2>About</h2>
-  <p>This is a simple AI Assistant UI built using HTML, CSS, and JavaScript. It is designed to simulate basic chatbot conversations like GPT.</p>
+ <!-- 👇 Font Link in <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<!-- 👇 About Section -->
+<section id="about" style="
+  padding: 30px;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+">
+  <h2 style="font-size: 24px; margin-bottom: 10px;">About</h2>
+  <p style="font-size: 16px; max-width: 600px; margin: auto;">
+    This is a lightweight AI Assistant UI made using HTML, CSS, and JavaScript.  
+    It's designed for simple chatbot-style conversations like GPT.
+  </p>
 </section>
 
-<!-- Footer / Developed By -->
-<footer style="background: #111; color: #fff; text-align: center; padding: 15px;">
+<!-- 👇 Footer Section -->
+<footer style="
+  background: #ffffff;
+  color: #555;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+">
   <p>Developed with ❤️ by <strong>Dhiraj Gaikwad</strong></p>
   <p>© 2025 All rights reserved.</p>
 </footer>
