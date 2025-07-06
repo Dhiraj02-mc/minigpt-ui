@@ -200,17 +200,22 @@ body.dark #darkToggle {
 }
 
 #about-section {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+  background-color: #ffffff;
+  color: #333;
   padding: 40px 20px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark #about-section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
 }
 
 #about-section h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #ffffff;
 }
 
 #about-section p {
@@ -218,19 +223,29 @@ body.dark #darkToggle {
   max-width: 600px;
   margin: auto;
   line-height: 1.6;
-  color: #cccccc;
 }
 
 #footer {
-  background-color: #121212;
-  color: #aaaaaa;
+  background-color: #ffffff;
+  color: #555;
   text-align: center;
   padding: 20px;
   font-size: 14px;
+  border-top: 1px solid #eee;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark #footer {
+  background-color: #121212;
+  color: #aaaaaa;
   border-top: 1px solid #333;
 }
 
 #footer strong {
+  color: #000;
+}
+
+body.dark #footer strong {
   color: #ffffff;
 }
 
@@ -238,17 +253,23 @@ body.dark #darkToggle {
   text-align: center;
   padding: 20px;
   font-size: 14px;
-  background-color: #1a1a1a;
+  background-color: #f8f8f8;
   color: #888;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark #bottom-note {
+  background-color: #1a1a1a;
+  color: #bbbbbb;
 }
 
 #bottom-note a {
-  color: #bbbbbb;
+  color: #999;
   text-decoration: none;
 }
 
 #bottom-note a:hover {
-  color: #ffffff;
+  color: #fff;
   text-decoration: underline;
 }
 
