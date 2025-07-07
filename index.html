@@ -347,10 +347,84 @@
     padding: 2rem;
     color: white;
   }
-</style>
+    <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .bar {
+    height: 3px;
+    border-radius: 2px;
+    background: #5b66ff;
+    box-shadow: 0 0 6px #5b66ff80;
+    transition: all 0.3s ease;
+  }
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(135deg, #f0f4ff, #e6f7ff);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid #dbe9ff;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: left 0.4s ease;
+    z-index: 100;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .side-menu a {
+    padding: 14px 20px;
+    font-size: 16px;
+    color: #3a3f6c;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    margin: 6px 12px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .side-menu a:hover {
+    background: rgba(91, 102, 255, 0.15);
+    color: #000;
+  }
+
+  .side-menu.active {
+    left: 0;
+  }
   </style>
 </head>
 <body>
+  <!-- Hamburger Icon -->
+<div class="hamburger" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Slide Menu -->
+<div id="side-menu" class="side-menu">
+  <a href="#about">About</a>
+  <!-- बाकी links हवे असतील तर इथे -->
+</div>
   <div id="particles-js"></div>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
@@ -515,6 +589,18 @@
       pCanvas.pJS.particles.array.splice(0, pCanvas.pJS.particles.array.length - maxParticles);
     }
   }, 3000);
+
+  function toggleMenu() {
+    const menu = document.getElementById("side-menu");
+    menu.classList.toggle("active");
+
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove("active");
+      });
+    });
+  }
 
   </script>
 </body>
