@@ -240,7 +240,7 @@
     }
 
     body.dark #footer strong {
-      color: #ffffff;
+     color: #ffffff;
     }
 
     #bottom-note a {
@@ -323,9 +323,37 @@
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+    <style>
+  /* Particles in background */
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    z-index: -1;
+    pointer-events: none; /* Important: allows clicks on content */
+  }
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .main-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: white;
+  }
+</style>
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
   <!-- Loader Section -->
 <div id="loader">
   <div class="dots">
@@ -425,7 +453,69 @@
     loader.style.display = "none";
     mainUI.style.display = "block";
   }, 4000); // Total delay: 3.5s animation + buffer
-});
+})
+  let maxParticles = 5;
+
+  function setupParticles() {
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": maxParticles,
+          "density": { "enable": false }
+        },
+        "color": {
+          "value": ["#00f7ff", "#ff4aff", "#39ff14", "#ffae00"]
+        },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.7,
+          "anim": {
+            "enable": true,
+            "speed": 0.3,
+            "opacity_min": 0.1
+          }
+        },
+        "size": {
+          "value": 12,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 3,
+            "size_min": 3
+          }
+        },
+        "line_linked": { "enable": false },
+        "move": {
+          "enable": true,
+          "speed": 1.5,
+          "random": true,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          }
+        },
+        "modes": {
+          "push": { "particles_nb": 2 }
+        }
+      },
+      "retina_detect": true
+    });
+  }
+
+  setupParticles();
+
+  setInterval(() => {
+    const pCanvas = window.pJSDom[0];
+    if (pCanvas && pCanvas.pJS.particles.array.length > maxParticles) {
+      pCanvas.pJS.particles.array.splice(0, pCanvas.pJS.particles.array.length - maxParticles);
+    }
+  }, 3000);
+
   </script>
 </body>
 </html>
