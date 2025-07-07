@@ -352,27 +352,30 @@
     scroll-behavior: smooth;
   }
 
-  .hamburger {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 101;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 18px;
-    cursor: pointer;
-  }
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(91, 102, 255, 0.4);
+}
 
-  .bar {
-    height: 3px;
-    border-radius: 2px;
-    background: #5b66ff;
-    box-shadow: 0 0 6px #5b66ff80;
-    transition: all 0.3s ease;
-  }
-
+.bar {
+  height: 3px;
+  background: #5b66ff;
+  border-radius: 2px;
+  box-shadow: 0 0 4px #5b66ff80;
+}
   .side-menu {
     position: fixed;
     top: 0;
@@ -413,12 +416,18 @@
   </style>
 </head>
 <body>
-  <!-- Hamburger Icon -->
-<div class="hamburger" onclick="toggleMenu()">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</div>
+  <body>
+  <!-- ✅ FIXED ITEMS – First inside <body> -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <div id="side-menu" class="side-menu">
+    <a href="#about-section">About</a>
+    <!-- बाकी links हवेत तर इथे टाक -->
+  </div>
 
 <!-- Slide Menu -->
 <div id="side-menu" class="side-menu">
